@@ -20,6 +20,17 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PgButton {
+        "buttonText": string;
+        "buttonType": 'success' | 'danger';
+    }
+    interface PgInput {
+        "inputId": string;
+        "label": string;
+        "type": string;
+    }
+    interface PgLogin {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +39,29 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPgButtonElement extends Components.PgButton, HTMLStencilElement {
+    }
+    var HTMLPgButtonElement: {
+        prototype: HTMLPgButtonElement;
+        new (): HTMLPgButtonElement;
+    };
+    interface HTMLPgInputElement extends Components.PgInput, HTMLStencilElement {
+    }
+    var HTMLPgInputElement: {
+        prototype: HTMLPgInputElement;
+        new (): HTMLPgInputElement;
+    };
+    interface HTMLPgLoginElement extends Components.PgLogin, HTMLStencilElement {
+    }
+    var HTMLPgLoginElement: {
+        prototype: HTMLPgLoginElement;
+        new (): HTMLPgLoginElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "pg-button": HTMLPgButtonElement;
+        "pg-input": HTMLPgInputElement;
+        "pg-login": HTMLPgLoginElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +79,22 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PgButton {
+        "buttonText"?: string;
+        "buttonType"?: 'success' | 'danger';
+    }
+    interface PgInput {
+        "inputId"?: string;
+        "label"?: string;
+        "type"?: string;
+    }
+    interface PgLogin {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "pg-button": PgButton;
+        "pg-input": PgInput;
+        "pg-login": PgLogin;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +102,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pg-button": LocalJSX.PgButton & JSXBase.HTMLAttributes<HTMLPgButtonElement>;
+            "pg-input": LocalJSX.PgInput & JSXBase.HTMLAttributes<HTMLPgInputElement>;
+            "pg-login": LocalJSX.PgLogin & JSXBase.HTMLAttributes<HTMLPgLoginElement>;
         }
     }
 }

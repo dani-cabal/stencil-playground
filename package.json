@@ -12,7 +12,7 @@
   "unpkg": "dist/stencil-playground/stencil-playground.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/dani-cabal/stencil-playground.git"
   },
   "files": [
     "dist/",
